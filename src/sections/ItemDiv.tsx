@@ -3,7 +3,7 @@ import {
   ItemDivImage,
   ItemDivTitle,
   ItemDivPara,
-} from "./style";
+} from "../components/style";
 
 export default function ItemDiv() {
   return (

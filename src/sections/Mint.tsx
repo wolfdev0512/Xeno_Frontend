@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   MintLayout,
   MintText,
@@ -5,11 +7,17 @@ import {
   MintTextPara2,
   MintDiv,
   MintDivTitle,
-  MintDivButton,
   MintDivLabel,
   MintDivInput,
-} from "./style";
+} from "../components/style";
+import { ConnectButton } from "../components/buttons/ConnectButton";
+import { TransactionButton } from "components/buttons/TransactionButton";
+
 export default function Mint() {
+  const [account, setAccount] = useState<any>();
+  const getData = (temp: any) => {
+    setAccount(temp);
+  };
   return (
     <MintLayout id="mint">
       <MintText>
@@ -31,12 +39,10 @@ export default function Mint() {
 
       <MintDiv>
         <MintDivTitle>Purchase</MintDivTitle>
-        <MintDivButton>Connect Wallet</MintDivButton>
-        <MintDivLabel>Amount:</MintDivLabel>
-        <MintDivInput></MintDivInput>
-        <MintDivLabel>Sold Out</MintDivLabel>
-        <MintDivButton>Buy on OpenSea.io</MintDivButton>
-        <MintDivButton>Claim Dogs</MintDivButton>
+        <ConnectButton getAccount={getData}></ConnectButton>
+        <MintDivLabel>Amount</MintDivLabel>
+        <MintDivInput type={"number"} step={1} defaultValue={1}></MintDivInput>
+        <TransactionButton account={account}></TransactionButton>
       </MintDiv>
     </MintLayout>
   );

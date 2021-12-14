@@ -1,4 +1,9 @@
-import { HeaderLayout, HeaderTitle, HeaderMenu, HeaderMenuItem } from "./style";
+import {
+  HeaderLayout,
+  HeaderTitle,
+  HeaderMenu,
+  HeaderMenuItem,
+} from "../components/style";
 
 export default function Header() {
   return (

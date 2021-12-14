@@ -11,7 +11,7 @@ import {
   LandingTextLinkBox,
   LandingTextButtonBoxItem,
   LandingTextLinkBoxItem,
-} from "./style";
+} from "../components/style";
 import { BsTwitter } from "react-icons/bs";
 import { SiDiscord } from "react-icons/si";
 
@@ -26,8 +26,12 @@ export default function Landing() {
           <LandingTextPara1>Welcome to the</LandingTextPara1>
           <LandingTextPara2>The Xeno Project</LandingTextPara2>
           <LandingTextButtonBox>
-            <LandingTextButtonBoxItem>Claim Dogs</LandingTextButtonBoxItem>
-            <LandingTextButtonBoxItem>Join Discord</LandingTextButtonBoxItem>
+            <LandingTextButtonBoxItem href="#mint">
+              Claim Xeno
+            </LandingTextButtonBoxItem>
+            <LandingTextButtonBoxItem href="https://discord.gg">
+              Join Discord
+            </LandingTextButtonBoxItem>
           </LandingTextButtonBox>
           <LandingTextPara3>
             The Xeno Project is 5,000 randomly generated Aliens living on the
@@ -35,11 +39,11 @@ export default function Landing() {
             a mission back to space.
           </LandingTextPara3>
           <LandingTextLinkBox>
-            <LandingTextLinkBoxItem>
-              <BsTwitter></BsTwitter>
+            <LandingTextLinkBoxItem href="http://discord.gg">
+              <SiDiscord color="white"></SiDiscord>
             </LandingTextLinkBoxItem>
-            <LandingTextLinkBoxItem>
-              <SiDiscord></SiDiscord>
+            <LandingTextLinkBoxItem href="http://twitter.com">
+              <BsTwitter color="white"></BsTwitter>
             </LandingTextLinkBoxItem>
           </LandingTextLinkBox>
         </LandingText>

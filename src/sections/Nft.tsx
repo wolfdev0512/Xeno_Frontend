@@ -1,5 +1,5 @@
-import { NftLayout } from "./style";
-import NftItem from "./NftItem";
+import { NftLayout } from "../components/style";
+import NftItem from "../components/NftItem/NftItem";
 
 export default function Nft() {
   return (

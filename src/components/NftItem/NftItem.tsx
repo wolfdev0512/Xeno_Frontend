@@ -1,4 +1,4 @@
-import { NftItemImage } from "./style";
+import { NftItemImage } from "../style";
 type NftItemProps = {
   datatext: string;
 };
