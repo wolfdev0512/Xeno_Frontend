@@ -1,4 +1,5 @@
 import { useEthers } from "@usedapp/core";
+import { useEffect } from "react";
 import { MintDivButton } from "../../../style";
 
 export default function ConnectButton({
@@ -7,12 +8,14 @@ export default function ConnectButton({
   getAccount: (temp: any) => void;
 }) {
   const { activateBrowserWallet, account } = useEthers();
+  useEffect(() => {
+    getAccount(account);
+  }, [account]);
 
   function handleConnectWallet() {
     activateBrowserWallet();
   }
   if (account) {
-    getAccount(account);
     return (
       <MintDivButton>
         {account &&

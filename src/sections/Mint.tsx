@@ -14,9 +14,13 @@ import { ConnectButton } from "../components/buttons/ConnectButton";
 import { TransactionButton } from "components/buttons/TransactionButton";
 
 export default function Mint() {
+  const [count, setCount] = useState(1);
   const [account, setAccount] = useState<any>();
   const getData = (temp: any) => {
     setAccount(temp);
+  };
+  const onChangeCount = (e: any) => {
+    setCount(e.target.value);
   };
   return (
     <MintLayout id="mint">
@@ -41,8 +45,14 @@ export default function Mint() {
         <MintDivTitle>Purchase</MintDivTitle>
         <ConnectButton getAccount={getData}></ConnectButton>
         <MintDivLabel>Amount</MintDivLabel>
-        <MintDivInput type={"number"} step={1} defaultValue={1}></MintDivInput>
-        <TransactionButton account={account}></TransactionButton>
+        <MintDivInput
+          onChange={onChangeCount}
+          type={"number"}
+          step={1}
+          defaultValue={1}
+          min={1}
+        ></MintDivInput>
+        <TransactionButton account={account} count={count}></TransactionButton>
       </MintDiv>
     </MintLayout>
   );
